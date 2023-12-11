@@ -1,33 +1,11 @@
 // Title: Day 02 Part 01
+use crate::yr2023::day02::CubeSet;
 
 pub fn solve() {
     let input = include_str!("../input/day-02.txt");
     let output = part1(input);
     dbg!(output);
 }
-
-#[derive(Debug, Default)]
-pub struct CubeSet {
-    pub red: u32,
-    pub green: u32,
-    pub blue: u32,
-}
-
-impl CubeSet {
-    pub fn max(&self, other: &Self) -> Self {
-        Self {
-            red: self.red.max(other.red),
-            green: self.green.max(other.green),
-            blue: self.blue.max(other.blue),
-        }
-    }
-
-    pub fn is_possible(&self) -> bool {
-        self.red <= MAX_CUBES[0] && self.green <= MAX_CUBES[1] && self.blue <= MAX_CUBES[2]
-    }
-}
-
-const MAX_CUBES: [u32; 3] = [12, 13, 14];
 
 fn part1(input: &str) -> u32 {
     let mut set = parse(input);

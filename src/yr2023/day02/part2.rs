@@ -1,6 +1,6 @@
 // Title: Day 02 Part 2
 
-use crate::yr2023::day02::part1::CubeSet;
+use crate::yr2023::day02::CubeSet;
 
 pub fn solve() {
     let input = include_str!("../input/day-02.txt");
